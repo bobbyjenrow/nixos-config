@@ -1,12 +1,12 @@
 { stdenv, fetchFromGitHub, ... }:
 
 stdenv.mkDerivation {
-  pname = "2048";
+  pname = "bobbynix";
   version = "1.0";
 
   src = fetchFromGitHub {
-    owner = "Frost-Phoenix";
-    repo = "2048-cli";
+    owner = "bobbyjenrow";
+    repo = "nixos-config";
     rev = "e5b5e2b";
     sha256 = "sha256-DqOSfKQC7WdslEknzFByZPc20AsjX6+5PwKR3gqucOM=";
   };

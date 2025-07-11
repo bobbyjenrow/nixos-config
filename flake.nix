@@ -1,5 +1,5 @@
 {
-  description = "FrostPhoenix's nixos configuration";
+  description = "bobbyjenrow's nixos configuration based on FrostPhoenix";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -37,7 +37,7 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
 
     ghostty.url = "github:ghostty-org/ghostty";
   };
@@ -45,7 +45,7 @@
   outputs =
     { nixpkgs, self, ... }@inputs:
     let
-      username = "frostphoenix";
+      username = "bobby";
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
