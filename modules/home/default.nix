@@ -29,7 +29,7 @@
     ./password-managers.nix
     ./retroarch.nix
     ./rofi.nix                        # launcher
-    ./signal
+    ./signal.nix
     ./scripts/scripts.nix             # personal scripts
     ./ssh.nix                         # ssh config
     ./superfile/superfile.nix         # terminal file manager
