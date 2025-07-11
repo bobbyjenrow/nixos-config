@@ -68,6 +68,7 @@
           modules = [ ./hosts/laptop ];
           specialArgs = {
             host = "laptop";
+            input.keyd.laptopOnly = true;
             inherit self inputs username;
           };
         };

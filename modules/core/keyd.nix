@@ -11,7 +11,7 @@
       enable = true;
       keyboards = {
         default = {
-          ids = if config.bobbynix.nixos.input.keyd.laptopOnly then [
+          ids = if config.input.keyd.laptopOnly then [
             # Target laptop built-in keyboards by common patterns
             # This excludes most external keyboards while catching built-in ones
             "*AT*keyboard*"
@@ -75,7 +75,7 @@
     };
 
     # Add user to input group for keyd access
-    users.groups.keyd = {};
+    users.groups.keyd = { "bobbyj"};
 
     # Create udev rules for proper device permissions
     services.udev.extraRules = ''
@@ -98,7 +98,7 @@
 
     # Warning about external keyboards
     warnings = lib.optionals
-      (config.bobbynix.nixos.input.keyd.enable && config.bobbynix.nixos.input.keyd.laptopOnly) [
+      (config.input.keyd.enable && config.input.keyd.laptopOnly) [
       "Keyd is configured for laptop-only mode. External keyboards should not be affected, but you may need to adjust the keyboard IDs if the configuration doesn't work as expected."
     ];
 
