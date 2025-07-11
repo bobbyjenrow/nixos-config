@@ -8,7 +8,7 @@
       mullvad-browser
     ]
   );
-  programs.firefox.extensions = with pkgs; [
+  programs.firefox.profiles.bobbyj.extensions.packages = with pkgs; [
       nur.repos.rycee.firefox-addons.bitwarden
       nur.repos.rycee.firefox-addons.lastpass
   ];
