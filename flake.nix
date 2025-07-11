@@ -1,5 +1,5 @@
 {
-  description = "bobbyjenrow's nixos configuration based on FrostPhoenix";
+  description = "bobbyjjenrow's nixos configuration based on FrostPhoenix";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -45,7 +45,7 @@
   outputs =
     { nixpkgs, self, ... }@inputs:
     let
-      username = "bobby";
+      username = "bobbyj";
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;

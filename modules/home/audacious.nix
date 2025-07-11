@@ -9,7 +9,7 @@
     soft_clipping=TRUE
 
     [audgui]
-    filesel_path=/home/bobby/Music
+    filesel_path=/home/bobbyj/Music
 
     [audqt]
     icon_theme=audacious-flat-dark
