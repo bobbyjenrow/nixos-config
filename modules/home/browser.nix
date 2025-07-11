@@ -6,7 +6,7 @@
       firefox
       librewolf
       mullvad-browser
-    ];
+    ]
   );
   programs.firefox.extensions = with pkgs; [
       nur.repos.rycee.firefox-addons.bitwarden
