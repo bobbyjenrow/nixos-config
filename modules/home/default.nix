@@ -26,7 +26,7 @@
     ./obsidian.nix
     ./p10k/p10k.nix
     ./packages                        # other packages
-    ./password-manager
+    ./password-managers.nix
     ./retroarch.nix
     ./rofi.nix                        # launcher
     ./signal
@@ -36,13 +36,13 @@
     ./swaylock.nix                    # lock screen
     ./swayosd.nix                     # brightness / volume wiget
     ./swaync/swaync.nix               # notification deamon
-    ./thunderbird
+    ./thunderbird.nix
     # ./viewnior.nix                    # image viewer
     ./vscodium                        # vscode fork
     ./waybar                          # status bar
     ./waypaper.nix                    # GUI wallpaper picker
     ./xdg-mimes.nix                   # xdg config
     ./zsh                             # shell
-    ./zed
+    ./zed.nix
   ];
 }
