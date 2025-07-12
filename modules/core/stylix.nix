@@ -9,6 +9,7 @@ in
 {
   stylix = {
     enable = true;
+    autoEnable = true;
     image = wallpaper;
     base16Scheme = theme;
     fonts = {
