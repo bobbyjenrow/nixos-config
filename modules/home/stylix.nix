@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 let
-  theme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+  theme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
   wallpaper = pkgs.runCommand "../../wallpapers/wallpaper.png" { } ''
     COLOR=$(${lib.getExe pkgs.yq} -r .palette.base00 ${theme})
     ${lib.getExe pkgs.imagemagick} -size 1920x1080 xc:$COLOR $out
@@ -27,11 +27,14 @@ in
         name = "DejaVu Sans";
       };
 
+      # monospace = {
+      #   package = pkgs.dejavu_fonts;
+      #   name = "DejaVu Sans Mono";
+      # };
       monospace = {
-        package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
-        name = "JetBrainsMono Nerd Font";
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font Mono";
       };
-
       emoji = {
         package = pkgs.noto-fonts-emoji;
         name = "Noto Color Emoji";

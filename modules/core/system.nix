@@ -29,6 +29,9 @@
   environment.systemPackages = with pkgs; [
     wget
     git
+    tmux
+    vim
+    nvim
   ];
 
   time.timeZone = "America/New_York";
