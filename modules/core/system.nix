@@ -31,7 +31,7 @@
     git
     tmux
     vim
-    nvim
+    neovim
   ];
 
   time.timeZone = "America/New_York";
