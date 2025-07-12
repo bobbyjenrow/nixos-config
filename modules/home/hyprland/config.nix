@@ -17,9 +17,9 @@ in
         "wl-clip-persist --clipboard both &"
         "wl-paste --watch cliphist store &"
         "waybar &"
-        "swaync &"
+        "dunst &"
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
-        "swww-daemon &"
+        "hyprpaper &"
 
         "hyprlock"
 
@@ -171,7 +171,7 @@ in
         "$mainMod, C ,exec, hyprpicker -a"
         "$mainMod, W,exec, wallpaper-picker"
         "$mainMod SHIFT, W,exec, hyprctl dispatch exec '[float; size 925 615] waypaper'"
-        "$mainMod, N, exec, swaync-client -t -sw"
+        "$mainMod, N, exec, dunst -t -sw"
         "CTRL SHIFT, Escape, exec, hyprctl dispatch exec '[workspace 9] missioncenter'"
         "$mainMod, equal, exec, woomer"
         # "$mainMod SHIFT, W, exec, vm-start"
@@ -267,7 +267,7 @@ in
         "$mainMod, mouse_up, workspace, e+1"
 
         # clipboard manager
-        "$mainMod, V, exec, cliphist list | rofi -dmenu -theme-str 'window {width: 50%;} listview {columns: 1;}' | cliphist decode | wl-copy"
+        "$mainMod, V, exec, cliphist list | fuzzel --dmenu --width 50 --columns 1 | cliphist decode | wl-copy"
       ];
 
       # # binds active in lockscreen

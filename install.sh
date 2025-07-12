@@ -131,9 +131,11 @@ main() {
 
     get_username
     set_username
-    get_host
-
-    aseprite
+    # Disable host selection, there's only one
+    # get_host
+    HOST='laptop'
+    # disable aseprite, we're using stylix
+    # aseprite
     install
 }
 

@@ -40,10 +40,21 @@
     zen-browser.url = "github:MarceColl/zen-browser-flake";
 
     ghostty.url = "github:ghostty-org/ghostty";
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { nixpkgs, self, ... }@inputs:
+    {
+      nixpkgs,
+      self,
+      stylix,
+      home-manager,
+      ...
+    }@inputs:
     let
       username = "bobbyj";
       system = "x86_64-linux";
@@ -55,31 +66,39 @@
     in
     {
       nixosConfigurations = {
-        desktop = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [ ./hosts/desktop ];
-          specialArgs = {
-            host = "desktop";
-            inherit self inputs username;
-          };
-        };
+        # desktop = nixpkgs.lib.nixosSystem {
+        #   inherit system;
+        #   modules = [
+        #     ./hosts/desktop
+        #     stylix.nixosModules.stylix
+        #   ];
+        #   specialArgs = {
+        #     host = "desktop";
+        #     inherit self inputs username;
+        #   };
+        # };
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./hosts/laptop ];
+          modules = [
+            ./hosts/laptop
+            stylix.nixosModules.stylix
+          ];
           specialArgs = {
             host = "laptop";
             input.keyd.laptopOnly = true;
             inherit self inputs username;
           };
+
         };
-        vm = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [ ./hosts/vm ];
-          specialArgs = {
-            host = "vm";
-            inherit self inputs username;
-          };
-        };
+        # vm = nixpkgs.lib.nixosSystem {
+        #   inherit system;
+        #   modules = [ ./hosts/vm ];
+        #   specialArgs = {
+        #     host = "vm";
+        #     inherit self inputs username;
+        #   };
+        # };
       };
+
     };
 }

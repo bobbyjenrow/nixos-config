@@ -1,4 +1,3 @@
-
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
@@ -28,7 +27,7 @@
         provider = "zed.dev";
         model = "claude-sonnet-4";
       };
-      model_parameters = [];
+      model_parameters = [ ];
       always_allow_tool_actions = true;
       version = "2";
       preferred_completion_mode = "burn";
@@ -40,8 +39,7 @@
     # Theme and fonts will be handled by Stylix
     theme = {
       mode = "system";
-      light = "Gruvbox Light";  # Fallback theme
-      dark = "Gruvbox Dark";    # Fallback theme
+      dark = "Gruvbox Dark"; # Fallback theme
     };
 
     # Vim mode
@@ -58,7 +56,10 @@
         format_on_save = {
           external = {
             command = "prettierd";
-            arguments = ["--stdin-filepath" "{buffer_path}"];
+            arguments = [
+              "--stdin-filepath"
+              "{buffer_path}"
+            ];
           };
         };
       };
@@ -68,7 +69,10 @@
         format_on_save = {
           external = {
             command = "prettierd";
-            arguments = ["--stdin-filepath" "{buffer_path}"];
+            arguments = [
+              "--stdin-filepath"
+              "{buffer_path}"
+            ];
           };
         };
       };
@@ -76,7 +80,10 @@
         format_on_save = {
           external = {
             command = "prettierd";
-            arguments = ["--stdin-filepath" "{buffer_path}"];
+            arguments = [
+              "--stdin-filepath"
+              "{buffer_path}"
+            ];
           };
         };
       };
@@ -84,7 +91,10 @@
         format_on_save = {
           external = {
             command = "prettierd";
-            arguments = ["--stdin-filepath" "{buffer_path}"];
+            arguments = [
+              "--stdin-filepath"
+              "{buffer_path}"
+            ];
           };
         };
       };
@@ -94,7 +104,10 @@
         format_on_save = {
           external = {
             command = "prettierd";
-            arguments = ["--stdin-filepath" "{buffer_path}"];
+            arguments = [
+              "--stdin-filepath"
+              "{buffer_path}"
+            ];
           };
         };
       };
@@ -196,6 +209,7 @@
         "space e" = "workspace::ToggleLeftDock";
         "space t" = "workspace::ToggleBottomDock";
         "space g g" = "git::Commit";
+        "space g p" = "git::Push";
         "space g c" = "git::Commit";
         "space g b" = "git::Blame";
         "space b r" = "pane::CloseItemsToTheRight";
