@@ -109,7 +109,7 @@
   };
 
   # Warning about external keyboards
-  warnings = lib.optionals (config.input.keyd.enable && input.keyd.laptopOnly) [
+  warnings = lib.optionals (input.keyd.enable && input.keyd.laptopOnly) [
     "Keyd is configured for laptop-only mode. External keyboards should not be affected, but you may need to adjust the keyboard IDs if the configuration doesn't work as expected."
   ];
 

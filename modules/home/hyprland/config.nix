@@ -48,8 +48,8 @@ in
         gaps_in = 6;
         gaps_out = 12;
         border_size = 2;
-        "col.active_border" = "rgb(98971A) rgb(CC241D) 45deg";
-        "col.inactive_border" = "0x00000000";
+        # "col.active_border" = "rgb(98971A) rgb(CC241D) 45deg";
+        # "col.inactive_border" = "0x00000000";
         # border_part_of_window = false;
         no_border_on_floating = false;
       };
@@ -105,7 +105,7 @@ in
           offset = "0 2";
           range = 20;
           render_power = 3;
-          color = "rgba(00000055)";
+          # color = "rgba(00000055)";
         };
       };
 
@@ -298,8 +298,8 @@ in
         "float,class:^(mpv)$"
         "tile,class:^(Aseprite)$"
         "float,class:^(Audacious)$"
-        "pin,class:^(rofi)$"
-        "pin,class:^(waypaper)$"
+        "pin,class:^(fuzzel)$"
+        "pin,class:^(hyprpaper)$"
         # "idleinhibit focus,mpv"
         # "float,udiskie"
         "float,title:^(Transmission)$"

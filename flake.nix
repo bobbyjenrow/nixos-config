@@ -86,6 +86,7 @@
           specialArgs = {
             host = "laptop";
             input.keyd.laptopOnly = true;
+            input.keyd.enable = true;
             inherit self inputs username;
           };
 

@@ -11,6 +11,9 @@ in
     enable = true;
     image = wallpaper;
     base16Scheme = theme;
+    opacity = {
+      terminal = 0.66;
+    };
     fonts = {
       serif = {
         package = pkgs.dejavu_fonts;

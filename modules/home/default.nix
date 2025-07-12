@@ -19,7 +19,7 @@
     ./hyprland # window manager
     ./kitty.nix # terminal
     ./lazygit.nix
-    ./micro.nix # nano replacement
+    # ./micro.nix # nano replacement
     ./nemo.nix # file manager
     ./nix-search/nix-search.nix # TUI to search nixpkgs
     ./nvim.nix # neovim editor
@@ -39,7 +39,7 @@
     ./thunderbird.nix
     ./stylix.nix
     # ./viewnior.nix                    # image viewer
-    ./vscodium # vscode fork
+    # ./vscodium # vscode fork
     ./waybar # status bar
     ./waypaper.nix # GUI wallpaper picker
     ./xdg-mimes.nix # xdg config
