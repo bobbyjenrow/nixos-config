@@ -148,7 +148,7 @@ in
     "custom/launcher" = {
       format = "";
       on-click = "random-wallpaper";
-      on-click-right = "rofi -show drun";
+      on-click-right = "fuzzel";
       tooltip = "true";
       tooltip-format = "Random Wallpaper";
     };

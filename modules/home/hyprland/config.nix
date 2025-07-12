@@ -143,10 +143,6 @@ in
         movefocus_cycles_fullscreen = true;
       };
 
-      bindr = [
-        "SUPER, SUPER_L, fuzzel || pkill fuzzel"
-      ];
-
       bind = [
         # show keybinds list
         "$mainMod, F1, exec, show-keybinds"
@@ -159,7 +155,8 @@ in
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
-        "$mainMod, Space, exec, toggle-float"
+        "$mainMod, L, exec, toggle-float"
+        "$mainMod, Space, exec, fuzzel || pkill fuzzel"
         "$mainMod SHIFT, D, exec, webcord --enable-features=UseOzonePlatform --ozone-platform=wayland"
         "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
         "$mainMod, Escape, exec, swaylock"
