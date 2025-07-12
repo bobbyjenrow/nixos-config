@@ -10,7 +10,7 @@
       ];
       substituters = [
         "https://nix-community.cachix.org"
-        "https://nix-gaming.cachix.org"
+        # "https://nix-gaming.cachix.org"
         "https://hyprland.cachix.org"
         "https://ghostty.cachix.org"
       ];
