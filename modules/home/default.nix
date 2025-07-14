@@ -4,7 +4,7 @@
     # ./aseprite/aseprite.nix # pixel art editor
     # ./audacious.nix # music player
     ./spotify.nix
-    ./openaudible.nix
+    # ./openaudible.nix
     ./calibre.nix # calibre ebook manager
     ./bat.nix # better cat command
     ./browser.nix # firefox based browser

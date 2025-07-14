@@ -32,6 +32,7 @@
     tmux
     vim
     neovim
+    usbutils
   ];
 
   time.timeZone = "America/New_York";
