@@ -215,6 +215,7 @@ in
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
 
+        # "$mainMod, s, togglespecialworkspace, magic"
         # same as above, but switch to the workspace
         "$mainMod SHIFT, 1, movetoworkspacesilent, 1" # movetoworkspacesilent
         "$mainMod SHIFT, 2, movetoworkspacesilent, 2"

@@ -14,55 +14,82 @@
 
   # Enable keyd service
 
-
   services.keyd = {
     enable = true;
     keyboards = {
-      "atkbd" = {
-        ids = [ "*" ];  # Apply to all keyboards temporarily
+      "default" = {
+        ids = [ "*" ];
         settings = {
-          global = {
-            overload_timeout = "150";
-          };
           main = {
-            a = "lettermod(leftmeta, a, 150, 200)";
-            s = "lettermod(leftalt, s, 150, 200)";
-            d = "lettermod(leftctrl, d, 150, 200)";
-            f = "lettermod(leftshift, f, 150, 200)";
+            # Home row modifiers using lettermod
+            a = "lettermod(meta, a, 150, 250)";
+            s = "lettermod(alt, s, 150, 250)";
+            d = "lettermod(control, d, 150, 250)";
+            f = "lettermod(shift, f, 150, 250)";
 
-            j = "lettermod(rightshift, j, 150, 200)";
-            k = "lettermod(rightctrl, k, 150, 200)";
-            l = "lettermod(rightalt, l, 150, 200)";
-            semicolon = "lettermod(rightmeta, semicolon, 150, 200)";
+            j = "lettermod(shift, j, 150, 250)";
+            k = "lettermod(control, k, 150, 250)";
+            l = "lettermod(alt, l, 150, 250)";
+            semicolon = "lettermod(meta, semicolon, 150, 250)";
+
+            # Spacebar navigation layer
+            space = "overload(nav, space)";
+          };
+
+          # Navigation layer - activated by holding spacebar
+          nav = {
+            # Vim-style navigation
+            h = "left";
+            j = "down";
+            k = "up";
+            l = "right";
+
+            # Brackets and symbols
+            "1" = "[";
+            "4" = "]";
+            "2" = "(";
+            "3" = ")";
+            w = "{";
+            e = "}";
           };
         };
       };
     };
   };
 
-
   # Additional information
   environment.etc."keyd/README".text = ''
     Keyd Home Row Mods Configuration
     ===============================
 
-    This configuration implements home row modifier keys:
+    This configuration implements home row modifier keys using lettermod
+    and a spacebar navigation layer:
 
+    HOME ROW MODIFIERS:
     Left hand:
-    - a (hold) = Super/Windows key
-    - s (hold) = Alt key
-    - d (hold) = Ctrl key
-    - f (hold) = Shift key
+    - a (hold) = Super/Windows key, (tap) = a
+    - s (hold) = Alt key, (tap) = s
+    - d (hold) = Ctrl key, (tap) = d
+    - f (hold) = Shift key, (tap) = f
 
     Right hand:
-    - j (hold) = Shift key
-    - k (hold) = Ctrl key
-    - l (hold) = Alt key
-    - ; (hold) = Super/Windows key
+    - j (hold) = Shift key, (tap) = j
+    - k (hold) = Ctrl key, (tap) = k
+    - l (hold) = Alt key, (tap) = l
+    - ; (hold) = Super/Windows key, (tap) = ;
+
+    SPACEBAR NAVIGATION LAYER:
+    - space (hold) = navigation layer, (tap) = space
+
+    When holding spacebar:
+    - h/j/k/l = arrow keys (left/down/up/right)
+    - 1/4 = [ and ]
+    - 2/3 = ( and )
+    - w/e = { and }
 
     Timing:
-    - Tap timeout: 200ms
-    - Hold timeout: 200ms
+    - Idle timeout: 150ms (time to detect if typing mid-word)
+    - Hold timeout: 250ms (time to hold for modifier activation)
 
     To check if keyd is working:
     - sudo systemctl status keyd
@@ -71,6 +98,6 @@
     To reload configuration:
     - sudo systemctl reload keyd
 
-    Configuration file: /etc/keyd/default.conf
+    Configuration files: /etc/keyd/*.conf
   '';
 }
