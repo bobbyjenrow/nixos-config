@@ -14,11 +14,12 @@
 
   # Enable keyd service
 
+
   services.keyd = {
     enable = true;
     keyboards = {
-      "at_translated_set_2_keyboard" = {
-        ids = [ "0001:0001" ]; # Vendor:Product from your output
+      "atkbd" = {
+        ids = [ "*" ];  # Apply to all keyboards temporarily
         settings = {
           global = {
             overload_timeout = "150";
@@ -38,6 +39,7 @@
       };
     };
   };
+
 
   # Additional information
   environment.etc."keyd/README".text = ''
