@@ -33,7 +33,7 @@
             j = "lettermod(rightshift, j, 150, 200)";
             k = "lettermod(rightctrl, k, 150, 200)";
             l = "lettermod(rightalt, l, 150, 200)";
-            semicolon = "lettermod(rightmeta, semicolon, 150, 200)";
+            semicolon = "overloadt2(rightmeta, semicolon, 200)";
           };
         };
       };
